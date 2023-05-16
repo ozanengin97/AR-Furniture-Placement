@@ -6,7 +6,7 @@ public class placeCube : MonoBehaviour
 {
     private GameObject kup;
     private duzlem halka;
-    private bool diningChairCreated;
+    public static bool diningChairCreated;
     private float speedModifier;
     private Vector3 translationVector;
     GameObject go;
@@ -27,6 +27,31 @@ public class placeCube : MonoBehaviour
             yield return null;
         }
     }
+
+    public void deleteProcess ()
+    {
+        //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && diningChairCreated == true)
+        //{
+            //Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            //RaycastHit hit;
+            
+            //if (Physics.Raycast(ray, out hit))
+            //{
+                //if (OutlineSelection.selectedObject.CompareTag("Selected"))
+                //{
+                    //Destroy(go.transform);
+                    //diningChairCreated = false; 
+                //}
+            //}
+        //}
+            if (diningChairCreated && OutlineSelection.selectedObject != null)
+            {
+                Destroy(go.transform.gameObject);
+                Destroy(OutlineSelection.selectedObject.gameObject);
+                diningChairCreated = false;
+                OutlineSelection.selectedObject = null;
+            }
+    }
     void Start()
     {
         diningChairCreated = false;
@@ -43,13 +68,13 @@ public class placeCube : MonoBehaviour
         {
             go = Instantiate(kup, halka.transform.position, halka.transform.rotation);
             go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // first small
-            StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.9f, 0.9f, 0.9f), 1.0f, go)); // than animation starting, getting bigger.
+            StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.5f, 0.5f, 0.5f), 1.0f, go)); // than animation starting, getting bigger.
             diningChairCreated = true; 
             //go.tag = "Selected";
         }
         speedModifier = 0.0005f;
 
-       // Object movement logic within the Update function
+       // Object movement 
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved && kup != null)
         {
             if (OutlineSelection.selectedObject != null && OutlineSelection.selectedObject.CompareTag("Selected"))
@@ -77,7 +102,7 @@ public class placeCube : MonoBehaviour
                 currentRotationAngle = Mathf.Atan((Input.GetTouch(0).position.y - Input.GetTouch(1).position.y) / (Input.GetTouch(0).position.x - Input.GetTouch(1).position.x));
                 if ((currentRotationAngle - previousRotationAngle) > 0)
                 {
-                    OutlineSelection.selectedObject.transform.Rotate(0, rotationSpeed, 0);
+                    OutlineSelection.selectedObject.transform.Rotate(0, -rotationSpeed, 0);
                 }
                 if ((currentRotationAngle - previousRotationAngle) < 0)
                 {
@@ -86,7 +111,7 @@ public class placeCube : MonoBehaviour
             }
         }
 
-        // //Delete process
+        // //Delete process (burası çalışıyor, ui'daki delete butonuna atayacağım.)
         // else if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && diningChairCreated == true)
         // {
         //     Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
@@ -105,6 +130,9 @@ public class placeCube : MonoBehaviour
         //         }
         //     }
         // }
+
+
+        
         //Outline effect
         // if (Input.GetTouch(0).phase == TouchPhase.Ended)
         // { 
