@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &142661313349518326
+--- !u!1 &1665689826760871963
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5247095821269495352}
-  - component: {fileID: 3941855661100175813}
-  - component: {fileID: 18317650090715216}
+  - component: {fileID: 2268723388510757999}
+  - component: {fileID: 3128325451106616978}
+  - component: {fileID: 2952849233241888599}
   m_Layer: 0
-  m_Name: Coffee_Table_90D_Artek_Wood
+  m_Name: Coffee_Table_90D_Artek_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5247095821269495352
+--- !u!4 &2268723388510757999
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142661313349518326}
+  m_GameObject: {fileID: 1665689826760871963}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7931303759544664032}
-  m_RootOrder: 1
+  m_Father: {fileID: 5830722942104847308}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3941855661100175813
+--- !u!33 &3128325451106616978
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142661313349518326}
-  m_Mesh: {fileID: 4300000, guid: 564d5009621483e4fbad0919c3896b80, type: 3}
---- !u!23 &18317650090715216
+  m_GameObject: {fileID: 1665689826760871963}
+  m_Mesh: {fileID: 4300002, guid: 564d5009621483e4fbad0919c3896b80, type: 3}
+--- !u!23 &2952849233241888599
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142661313349518326}
+  m_GameObject: {fileID: 1665689826760871963}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d3fcebfb2e909c47a81db2a721026b6, type: 2}
+  - {fileID: 2100000, guid: 5958296d5b9a78e49a13e0fbe41c6964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1407845272243517346
+--- !u!1 &6967752981518407875
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7931303759544664032}
-  - component: {fileID: 533896695142353887}
-  - component: {fileID: 5760232188834405513}
+  - component: {fileID: 5830722942104847308}
+  - component: {fileID: 6977103786511941364}
+  - component: {fileID: 8314311157821513585}
   m_Layer: 0
   m_Name: Coffee_Table
   m_TagString: Selectable
@@ -101,43 +101,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7931303759544664032
+--- !u!4 &5830722942104847308
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407845272243517346}
+  m_GameObject: {fileID: 6967752981518407875}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -174.35388, y: 0.00022891238, z: 993.88556}
+  m_LocalPosition: {x: -386.75577, y: 0, z: 948.3966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 446682192693801421}
-  - {fileID: 5247095821269495352}
+  - {fileID: 2268723388510757999}
+  - {fileID: 8590529050771444086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &533896695142353887
+--- !u!65 &6977103786511941364
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407845272243517346}
+  m_GameObject: {fileID: 6967752981518407875}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &5760232188834405513
+  m_Size: {x: 0.6, y: 0.6, z: 0.7}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!23 &8314311157821513585
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407845272243517346}
+  m_GameObject: {fileID: 6967752981518407875}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -173,7 +173,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6833796996485842911
+--- !u!1 &7881474741649094189
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,46 +181,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 446682192693801421}
-  - component: {fileID: 399859162064846811}
-  - component: {fileID: 167874480628645549}
+  - component: {fileID: 8590529050771444086}
+  - component: {fileID: 6778758260598320393}
+  - component: {fileID: 4020994251669662489}
   m_Layer: 0
-  m_Name: Coffee_Table_90D_Artek_Top
+  m_Name: Coffee_Table_90D_Artek_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &446682192693801421
+--- !u!4 &8590529050771444086
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6833796996485842911}
+  m_GameObject: {fileID: 7881474741649094189}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7931303759544664032}
-  m_RootOrder: 0
+  m_Father: {fileID: 5830722942104847308}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &399859162064846811
+--- !u!33 &6778758260598320393
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6833796996485842911}
-  m_Mesh: {fileID: 4300002, guid: 564d5009621483e4fbad0919c3896b80, type: 3}
---- !u!23 &167874480628645549
+  m_GameObject: {fileID: 7881474741649094189}
+  m_Mesh: {fileID: 4300000, guid: 564d5009621483e4fbad0919c3896b80, type: 3}
+--- !u!23 &4020994251669662489
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6833796996485842911}
+  m_GameObject: {fileID: 7881474741649094189}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -234,7 +234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5958296d5b9a78e49a13e0fbe41c6964, type: 2}
+  - {fileID: 2100000, guid: 4d3fcebfb2e909c47a81db2a721026b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

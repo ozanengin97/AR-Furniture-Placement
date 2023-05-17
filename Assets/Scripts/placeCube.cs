@@ -28,60 +28,31 @@ public class placeCube : MonoBehaviour
             yield return null;
         }
     }
-
-    public void deleteProcess ()
-    {
-        //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && diningChairCreated == true)
-        //{
-            //Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-            //RaycastHit hit;
-            
-            //if (Physics.Raycast(ray, out hit))
-            //{
-                //if (OutlineSelection.selectedObject.CompareTag("Selected"))
-                //{
-                    //Destroy(go.transform);
-                    //diningChairCreated = false; 
-                //}
-            //}
-        //}
-            if (diningChairCreated && OutlineSelection.selectedObject != null)
-            {
-                Destroy(go.transform.gameObject);
-                Destroy(OutlineSelection.selectedObject.gameObject);
-                diningChairCreated = false;
-                OutlineSelection.selectedObject = null;
-            }
-    }
     void Start()
     {
         diningChairCreated = false;
         halka = FindObjectOfType<duzlem>();
         //kup = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        kup = Resources.Load<GameObject>("Dining_Chair");
-
+        //kup = Resources.Load<GameObject>("Dining_Chair");
     }
     void Update()
     {
+        //Add process
+        if (diningChairCreated)
+        {
+            go = Instantiate(kup, halka.transform.position, halka.transform.rotation);
+            go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // first small
+            StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.5f, 0.5f, 0.5f), 1.0f, go)); // than animation starting, getting bigger.
+            diningChairCreated = false; 
+        }        
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            
             // Check if the touch is not over a UI element
             if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
             {
-                                //Add process
-                if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && diningChairCreated == false)
-                {
-                    go = Instantiate(kup, halka.transform.position, halka.transform.rotation);
-                    go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // first small
-                    StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.5f, 0.5f, 0.5f), 1.0f, go)); // than animation starting, getting bigger.
-                    diningChairCreated = true; 
-                    //go.tag = "Selected";
-                }
                 speedModifier = 0.0005f;
-
-            // Object movement 
+                // Object movement 
                 if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved && kup != null)
                 {
                     if (OutlineSelection.selectedObject != null && OutlineSelection.selectedObject.CompareTag("Selected"))
@@ -117,44 +88,6 @@ public class placeCube : MonoBehaviour
                         }
                     }
                 }
-
-                // //Delete process (burası çalışıyor, ui'daki delete butonuna atayacağım.)
-                // else if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && diningChairCreated == true)
-                // {
-                //     Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-                //     RaycastHit hit;
-                    
-                //     Debug.Log("1. kisim");
-                //     if (Physics.Raycast(ray, out hit))
-                //     {
-                //         Debug.Log("2. kisim");
-                //         Debug.Log(hit.collider.name);
-                //         if (hit.collider.CompareTag("Selectable"))
-                //         {
-                //             Debug.Log("3. kisim");
-                //             Destroy(hit.collider.gameObject);
-                //             diningChairCreated = false; 
-                //         }
-                //     }
-                // }
-
-
-                
-                //Outline effect
-                // if (Input.GetTouch(0).phase == TouchPhase.Ended)
-                // { 
-                //     Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                //     RaycastHit raycastHit;
-                //     if (Physics.Raycast(raycast, out raycastHit))
-                //     {
-                //         if (raycastHit.collider.CompareTag("Object"))
-                //         {
-                //             HighlightObject();
-                //         }
-                //     }
-                //     else { DeselectObject(); }
-                // }
-                // else { DeselectObject(); }
             }
         }        
     }
