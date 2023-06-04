@@ -42,7 +42,7 @@ public class placeCube : MonoBehaviour
         {
             go = Instantiate(kup, halka.transform.position, halka.transform.rotation);
             go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // first small
-            StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.5f, 0.5f, 0.5f), 1.0f, go)); // than animation starting, getting bigger.
+            StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.9f, 0.9f, 0.9f), 1.0f, go)); // than animation starting, getting bigger.
             diningChairCreated = false; 
         }        
         if (Input.touchCount > 0)

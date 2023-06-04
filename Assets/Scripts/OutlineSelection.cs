@@ -60,7 +60,7 @@ public class OutlineSelection : MonoBehaviour
                     selection = raycastHit.transform;
                     selection.gameObject.tag = "Selected";
                     selection.gameObject.GetComponent<Outline>().enabled = true;
-                    selectedObject = selection; // burada değişkeni güncelliyoruz
+                    selectedObject = selection; // updating this variable
                     highlight = null;
                 }
                 else
@@ -71,7 +71,7 @@ public class OutlineSelection : MonoBehaviour
                         selection.gameObject.GetComponent<Outline>().enabled = false;
                         selection = null;
                     }
-                    selectedObject = null; // burada değişkeni null yapıyoruz
+                    selectedObject = null; // updating this variable with null
                 }
             }
         }
