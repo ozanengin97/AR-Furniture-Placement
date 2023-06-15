@@ -34,6 +34,7 @@ public class placeCube : MonoBehaviour
         halka = FindObjectOfType<duzlem>();
         //kup = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //kup = Resources.Load<GameObject>("Dining_Chair");
+
     }
     void Update()
     {
@@ -44,6 +45,7 @@ public class placeCube : MonoBehaviour
             go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f); // first small
             StartCoroutine(LerpObjectScale(go.transform.localScale, new Vector3(0.9f, 0.9f, 0.9f), 1.0f, go)); // than animation starting, getting bigger.
             diningChairCreated = false; 
+            
         }        
         if (Input.touchCount > 0)
         {
